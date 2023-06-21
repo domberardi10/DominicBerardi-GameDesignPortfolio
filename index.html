@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Dominic Berardi - Game Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a9ba53030.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/portfolio-logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <h1>Dominic Berardi</h1>
+            <p>Game Designer & Programmer</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var side_menu = document.getElementById("sidemenu");
+    function openmenu(){
+        side_menu.style.right = "0";
+    }
+    function closemenu(){
+        side_menu.style.right = "-200px";
+    }
+</script>
+<!-----------------------about------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col1">
+                <img src="images/portfolio-user.png">
+            </div>
+            <div class="about-col2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello! My name is Dominic Berardi, welcome to my portfolio. I'm an aspiring game designer. My skills have a large range, from game scripting and programming, 
+                    designing levels and gameplay loops, and even dabbling in VFX and graphics a bit too. Typically on a game project I take an engineering role, but I'm flexible 
+                    and always ready to learn new things or put my skills to the test. I've always wanted to create, and games are the perfect intersection of technical
+                    and artistic design that I strive to achieve when developing a project.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Game Scripting & Programming</span><br>Mostly in Unity (C#), with experience in Phaser (JavaScript) and Unreal (C++/Blueprint).<br>
+                        Also familiar in Python and C.</li>
+                        <li><span>Level Design</span><br>Building levels and scenes inside of game engine editors. Iterative process based on repeated feedback.</li>
+                        <li><span>Systems Design</span><br>Outlining the core gameplay loops and systems and implementing prototypes in-engine.</li>
+                        <li><span>UI/UX</span><br>Creating mock-ups of UI features and programming them as well.</li>
+                        <li><span>VFX</span><br>Utilizing particle systems and renderers to create engaging effects.</li>
+                        <li><span>Game Audio</span><br>Experience in FMOD (Unity) and MetaSounds (Unreal).</li>
+                        <li><span>Graphics</span><br>Some experience using shader graphs, GLSL, and rendering pipelines.</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022 - 2023</span><br>Game Scripting, Level Design, & More in 170 Series Collectives</li>
+                        <li><span>2023 - Current</span><br>Engineering Lead for The Assembly Line Collective</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023</span><br>BS Computer Science: Computer Game Design from UC Santa Cruz</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<!-------------------------skills---------------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-sharp fa-solid fa-code"></i>
+                <h2>Game Programming</h2>
+                <p> - General gameplay & game loop logic, player controllers, level scripting, AI state machines, and more.<br><br>
+                    - Games programmed in C#, JavaScript, and Python. Currently learning C++ scripting and Blueprint.<br><br>
+                    - Aiming for broadly learning core game programming concepts before focusing on one single facet.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-sharp fa-solid fa-crop-simple"></i>
+                <h2>Level Design</h2>
+                <p> - Constructing game scenes & levels within engine editors. Prototyping different designs.<br><br>
+                    - Creating prefabs for speedy iteration cycles as well as level generation.<br><br>
+                    - Great care taken in level-environment synergy and creating interesting and fun-to-play levels.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-sharp fa-solid fa-bars"></i>
+                <h2>& More</h2>
+                <p> - UI/UX design and programming; concious about quality of user experience.<br><br>
+                    - Gameplay VFX; creating particle effects, overlays, and lighting to enhance game feel.<br><br>
+                    - Graphics and shaders; some experience with shader graphs, GLSL, and rendering— looking to learn further.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------portfolio---------------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/dante-cover.png">
+                <div class="layer">
+                    <h3>DANTE</h3>
+                    <p>Fast-paced, first-person movement shooter inspired by games such as DOOM and Ultrakill.<br><br>
+                    My role: Gameplay programming (except player code), level design, UI programming, VFX & rendering.</p>
+                    <a href="https://ncprieto.itch.io/dante"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/vines-cover.png">
+                <div class="layer">
+                    <h3>VINES</h3>
+                    <p>PSX-styled survival horror where you are tasked with documenting and containing a vicious creature.<br><br>
+                    My role: Level design, item scripting, VFX & rendering.</p>
+                    <a href="https://es-jacque.itch.io/vines"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/soaring-hearts-cover.png">
+                <div class="layer">
+                    <h3>Soaring Hearts</h3>
+                    <p>Game jam co-op platformer, two kiwis that wish they could just fly high.<br><br>
+                    My role: Level design, level scripting.</p>
+                    <a href="https://sunnieside-boi.itch.io/soaring-hearts"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/hidenout-cover.png">
+                <div class="layer">
+                    <h3>Hide-N-Out</h3>
+                    <p>Stealth game in which you are a mischievous kid in a mall who must hide in plain sight to escape.<br><br>
+                    My role: Level design, game programming (created using Phaser, NOT Unity).</p>
+                    <a href="https://derpshmerp.itch.io/hide-n-out"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/coma-dream-cover.png">
+                <div class="layer">
+                    <h3>Coma Dream</h3>
+                    <p>Surreal game jam puzzle-platformer that adapts the experience of a coma from one of the team's artists.<br><br>
+                    My role: Level design, level scripting.</p>
+                    <a href="https://officialthomas.itch.io/comadream"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/faf-cover.png">
+                <div class="layer">
+                    <h3>Flora & Fawna</h3>
+                    <p>Short platformer, deactivate the machines and save the forest! My first game project.<br><br>
+                    My role: Level design, game scripting (created using Construct 3, NOT Unity).</p>
+                    <a href="https://domberardi10.github.io/flora-and-fawna/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+<!-------------------------contact---------------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i>domberardi10@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i></i>(707) 372-9624</p>
+                <div class="social-icons">
+                    <a href="https://derpshmerp.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
+                    <a href="https://discordapp.com/users/derpshmerp/"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Dominic D Berardi. Derived from video by EasyTutorials/GreatStack.</p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxYa37W8oERD-x81x66OYeSfeez9USRfVqVpYnUCynSmSF6m1bhbHOwana7xStXbdiC/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message successfully delivered."
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
